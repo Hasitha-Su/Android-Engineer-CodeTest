@@ -12,7 +12,6 @@ import dagger.hilt.android.HiltAndroidApp
  *
  * Use the `@HiltAndroidApp` annotation to enable Hilt dependency injection for the application.
  *
- *
  * @constructor Creates an instance of the MainApplication class.
  */
 @HiltAndroidApp

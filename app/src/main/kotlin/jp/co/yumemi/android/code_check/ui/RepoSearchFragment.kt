@@ -12,6 +12,7 @@ import jp.co.yumemi.android.code_check.R
 import jp.co.yumemi.android.code_check.databinding.FragmentRepoSearchBinding
 import jp.co.yumemi.android.code_check.view.RepoSearchViewModel
 import android.view.inputmethod.EditorInfo
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -20,6 +21,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.*
+import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.yumemi.android.code_check.model.RepoItem
 import jp.co.yumemi.android.code_check.utils.MessageUtils
@@ -208,7 +210,20 @@ class CustomAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-        (holder.itemView.findViewById<View>(R.id.repositoryNameView) as TextView).text = item.name
+
+        // Set the text for the repository name
+        val textView = holder.itemView.findViewById<TextView>(R.id.repositoryNameView)
+        textView.text = item.name
+
+        // Set the image for the repository icon
+        val imageView = holder.itemView.findViewById<ImageView>(R.id.repositoryIconView)
+        Glide.with(holder.itemView.context)
+            .load(item.owner.avatarUrl)
+            .placeholder(R.drawable.avatar2)
+            .error(R.drawable.avatar2)
+            .into(imageView)
+
+        // Set an onClickListener to handle clicks on the item
         holder.itemView.setOnClickListener { itemClickListener(item) }
     }
 }

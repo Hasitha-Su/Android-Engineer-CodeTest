@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.yumemi.android.code_check.R
 import jp.co.yumemi.android.code_check.databinding.FragmentRepoItemDetailsBinding
 import jp.co.yumemi.android.code_check.view.RepoItemDetailsViewModel
+
 @AndroidEntryPoint
 class RepoItemDetailsFragment : Fragment(R.layout.fragment_repo_item_details) {
 
@@ -19,20 +19,12 @@ class RepoItemDetailsFragment : Fragment(R.layout.fragment_repo_item_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentRepoItemDetailsBinding.bind(view)
+        binding.lifecycleOwner = viewLifecycleOwner // Important for LiveData binding
+        binding.viewModel = viewModel
+    }
 
-        viewModel.selectedItem.observe(viewLifecycleOwner) { item ->
-            item?.let {
-                with(item) {
-                    binding.apply {
-                        ownerIconView.load(owner.avatarUrl)
-                        nameView.text = name
-                        starsView.text = stargazersCount.toString()
-                        watchersView.text = watchersCount.toString()
-                        forksView.text = forksCount.toString()
-                        //textDescription.text = description
-                    }
-                }
-            }
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

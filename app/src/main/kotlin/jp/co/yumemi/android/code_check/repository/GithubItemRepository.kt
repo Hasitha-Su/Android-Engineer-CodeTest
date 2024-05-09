@@ -22,6 +22,15 @@ class GithubItemRepository @Inject constructor(
             getGithubRepositoryList(query)
         }
 
+    /**
+     * Fetches a list of GitHub repositories based on a search query.
+     *
+     * This method makes a network request to the GitHub API and returns the response body if the request is successful.
+     * If the response is not successful (e.g., the server returns an error), this method returns null.
+     *
+     * @param query The search query string used to fetch repository information from GitHub.
+     * @return A [GithubRepoSearchResponse] containing the search results if successful, or null if the request fails.
+     */
     private suspend fun getGithubRepositoryList(query: String): GithubRepoSearchResponse? {
         val response = itemApiService.getItems(query)
         return if (response.isSuccessful) response.body() else null

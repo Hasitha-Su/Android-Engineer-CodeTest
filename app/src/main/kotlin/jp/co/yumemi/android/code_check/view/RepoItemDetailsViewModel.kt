@@ -16,7 +16,6 @@ import javax.inject.Inject
 class RepoItemDetailsViewModel @Inject constructor() : ViewModel() {
 
     val selectedItem = MutableLiveData<RepoItem>()
-
     fun selectItem(item: RepoItem) {
         selectedItem.value = item
     }

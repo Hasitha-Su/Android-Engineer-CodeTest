@@ -28,6 +28,7 @@
     <string name="repo_item_image_content_desc">repo item image</string>
     <string name="search_github">Search GitHub</string>
     <string name="empty_query_error">Please enter a search query</string>
+    <string name="repository_icon">Repository icon</string>
     <!-- END - Repository Item UI  Strings -->
 
 </resources>

@@ -20,7 +20,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.*
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.yumemi.android.code_check.model.RepoItem
@@ -36,7 +40,6 @@ import javax.inject.Inject
  * It uses a RecyclerView to display the search results and handles user interactions such as item click.
  *
  */
-
 @AndroidEntryPoint
 class RepoSearchFragment : Fragment(R.layout.fragment_repo_search) {
 

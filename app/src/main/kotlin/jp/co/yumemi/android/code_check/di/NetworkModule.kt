@@ -7,7 +7,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import io.ktor.http.ContentType
 import jp.co.yumemi.android.code_check.constants.Constants.BASE_URL
 import jp.co.yumemi.android.code_check.network.GithubApiService
 import jp.co.yumemi.android.code_check.repository.GithubItemRepository

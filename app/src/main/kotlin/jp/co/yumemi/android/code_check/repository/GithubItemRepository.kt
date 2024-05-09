@@ -5,6 +5,7 @@ import jp.co.yumemi.android.code_check.network.GithubApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+
 /**
  * Repository class responsible for fetching GitHub repository data.
  *

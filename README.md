@@ -45,6 +45,20 @@ This Android application, developed using Kotlin, implements the MVVM architectu
 2. Use the search bar at the top of the main screen to search for GitHub repositories.
 3. Click on a repository to view detailed information, including the repository's name, owner, stars, and other relevant data.
 
+## Video
+https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/fea6dd90-6211-4232-9e5d-78866017672e
+
+## Screen Captures
+
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/968df61d-5c56-42c5-bc88-6814ef408174" alt="App Screenshot 1" width="250" height="533">
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/a22d6149-3c46-4601-bba6-3da0f79ba518" alt="App Screenshot 2" width="250" height="533">
+<br>
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/a79ec94a-1e6d-44af-aaf5-c4e3e8d59671" alt="App Screenshot 3" width="500" height="250">
+<br>
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/574496e2-85dc-48c9-9408-1ea1f80d32a3" alt="App Screenshot 4" width="500" height="250">
+
+
+
 ## Project Structure
 
 The project is organized into several packages to ensure a clean architecture:

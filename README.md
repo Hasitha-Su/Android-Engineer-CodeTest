@@ -1,59 +1,78 @@
-# 株式会社ゆめみ Android エンジニアコードチェック課題
+# Yumemi Co., Ltd. Android Engineer Code Check Assignment
 
-## 概要
+## Summary
 
-本プロジェクトは株式会社ゆめみ（以下弊社）が、弊社に Android エンジニアを希望する方に出す課題のベースプロジェクトです。本課題が与えられた方は、下記の概要を詳しく読んだ上で課題を取り組んでください。
+This Android application, developed using Kotlin, implements the MVVM architecture with data binding and dependency injection via Dagger Hilt. It features network interaction through Retrofit and Glide for image loading, targeting GitHub repositories for search functionalities. The app is designed as a single-activity application, leveraging Android's Navigation Component for fragment management.
 
-## アプリ仕様
+## Features
 
-本アプリは GitHub のリポジトリを検索するアプリです。
+### 1) GitHub Repository Search:
+- **Search Functionality**: Users can search GitHub repositories using the GitHub API.
+- **Display Results**: Search results are displayed in a RecyclerView.
+- **Repository Details**: Clicking on a repository item displays its detailed information in a new fragment.
 
-<img src="docs/app.gif" width="320">
+### 2) Image Loading:
+- **Dynamic Image Loading**: Repository owner images are loaded dynamically into list items using Glide.
 
-### 環境
+### 3) Network Handling:
+- **Network Monitoring**: The application monitors network connectivity and displays alerts when the network is unavailable.
 
-- IDE：Android Studio Flamingo | 2022.2.1 Patch 2
-- Kotlin：1.6.21
-- Java：17
-- Gradle：8.0
-- minSdk：23
-- targetSdk：31
+### 4) Dependency Injection:
+- **Dagger-Hilt Integration**: The app uses Dagger Hilt for dependency injection to provide Retrofit and other network-related dependencies.
 
-※ ライブラリの利用はオープンソースのものに限ります。
-※ 環境は適宜更新してください。
+### 5) Modern Android Development:
+- **Kotlin Coroutines**: Utilizes Kotlin Coroutines for asynchronous tasks, especially for network requests.
+- **Data Binding**: Employs data binding to bind UI components directly to data sources.
+- **View Binding**: View binding is used to interact with views more safely and efficiently.
 
-### 動作
+### 6) Robust Testing Framework:
+- **Unit Tests**: Includes unit tests for repository methods to ensure the reliability and correctness of the application logic.
 
-1. 何かしらのキーワードを入力
-2. GitHub API（`search/repositories`）でリポジトリを検索し、結果一覧を概要（リポジトリ名）で表示
-3. 特定の結果を選択したら、該当リポジトリの詳細（リポジトリ名、オーナーアイコン、プロジェクト言語、Star 数、Watcher 数、Fork 数、Issue 数）を表示
+## Main Libraries and Dependencies
+- **Retrofit**: For network operations.
+- **Glide**: For image loading.
+- **Dagger Hilt**: For dependency injection.
+- **Kotlin Coroutines**: For managing background threads with simplified code and reducing the need for callbacks.
+- **Navigation Component**: For managing app navigation.
 
-## 課題取り組み方法
+## Installation
+1. Clone the repository.
+2. Open the project in Android Studio.
+3. Build and run the app on an emulator or physical device.
 
-Issues を確認した上、本プロジェクトを [**Duplicate** してください](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)（Fork しないようにしてください。必要ならプライベートリポジトリにしても大丈夫です）。今後のコミットは全てご自身のリポジトリで行ってください。
+## Usage
+1. Open the app.
+2. Use the search bar at the top of the main screen to search for GitHub repositories.
+3. Click on a repository to view detailed information, including the repository's name, owner, stars, and other relevant data.
 
-コードチェックの課題 Issue は全て [`課題`](https://github.com/yumemi-inc/android-engineer-codecheck/milestone/1) Milestone がついており、難易度に応じて Label が [`初級`](https://github.com/yumemi-inc/android-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A初級+milestone%3A課題)、[`中級`](https://github.com/yumemi-inc/android-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A中級+milestone%3A課題+) と [`ボーナス`](https://github.com/yumemi-inc/android-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3Aボーナス+milestone%3A課題+) に分けられています。課題の必須／選択は下記の表とします。
+## Video
+https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/fea6dd90-6211-4232-9e5d-78866017672e
 
-|   | 初級 | 中級 | ボーナス
-|--:|:--:|:--:|:--:|
-| 新卒／未経験者 | 必須 | 選択 | 選択 |
-| 中途／経験者 | 必須 | 必須 | 選択 |
+## Screen Captures
 
-課題 Issueをご自身のリポジトリーにコピーするGitHub Actionsをご用意しております。  
-[こちらのWorkflow](./.github/workflows/copy-issues.yml)を[手動でトリガーする](https://docs.github.com/ja/actions/managing-workflow-runs/manually-running-a-workflow)ことでコピーできますのでご活用下さい。
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/968df61d-5c56-42c5-bc88-6814ef408174" alt="App Screenshot 1" width="250" height="533">
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/a22d6149-3c46-4601-bba6-3da0f79ba518" alt="App Screenshot 2" width="250" height="533">
+<br>
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/a79ec94a-1e6d-44af-aaf5-c4e3e8d59671" alt="App Screenshot 3" width="500" height="250">
+<br>
+<img src="https://github.com/Hasitha-Su/Android-Engineer-CodeTest/assets/37993553/574496e2-85dc-48c9-9408-1ea1f80d32a3" alt="App Screenshot 4" width="500" height="250">
 
-課題が完成したら、リポジトリのアドレスを教えてください。
 
-## 参考記事
 
-提出された課題の評価ポイントに関しては、[こちらの記事](https://qiita.com/blendthink/items/aa70b8b3106fb4e3555f)に詳しく書かれてありますので、ぜひご覧ください。
+## Project Structure
 
-## AIサービスの利用について
+The project is organized into several packages to ensure a clean architecture:
 
-ChatGPTなどAIサービスの利用は禁止しておりません。
+- **apiservices**: Contains the Retrofit API service definitions.
+- **models**: Defines the data models used by Retrofit for JSON serialization and deserialization.
+- **repository**: Contains repository classes responsible for data operations.
+- **ui**: Houses the activities and fragments along with their respective ViewModels.
+- **utils**: Includes utility classes such as network monitoring utilities.
 
-利用にあたって工夫したプロンプトやソースコメント等をご提出頂くことで、加点評価する場合もございます。 (減点評価はありません)
+## Environment
 
-また、弊社コードチェック担当者もAIサービスを利用させていただく場合があります。
-
-AIサービスの利用は差し控えてもらいたいなどのご要望がある場合は、お気軽にお申し出ください。
+- **IDE**: Android Studio Hedgehog | 2023.1.1 Patch 1
+- **Kotlin**: 1.6.21
+- **Gradle**: 8.0.2
+- **minSdk**: 23
+- **targetSdk**: 34
